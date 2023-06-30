@@ -12,7 +12,7 @@
 
     <script>
         document.getElementById('getDataBtn').addEventListener('click', () => {
-            fetch('http://43.201.220.175:5000/api/data') // Flask API의 엔드포인트 URL로 변경
+            fetch('https://43.201.220.175:5000/api/data') // Flask API의 엔드포인트 URL로 변경
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('dataContainer').innerHTML = data.message;
