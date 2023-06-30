@@ -1,0 +1,24 @@
+﻿<!-- index.html (GitHub Pages에 호스팅된 정적 웹 페이지) -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub Pages</title>
+</head>
+<body>
+    <h1>Hello, GitHub Pages!</h1>
+    <button id="getDataBtn">Get Data from Flask API</button>
+    <div id="dataContainer"></div>
+
+    <script>
+        document.getElementById('getDataBtn').addEventListener('click', () => {
+            fetch('http://your-aws-ec2-public-ip-or-domain/api/data') // Flask API의 엔드포인트 URL로 변경
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('dataContainer').innerHTML = data.message;
+                })
+                .catch(error => console.error(error));
+        });
+    </script>
+</body>
+</html>
